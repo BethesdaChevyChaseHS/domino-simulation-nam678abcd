@@ -35,7 +35,7 @@ public class Main extends ApplicationAdapter {
     private float DOMINO_WIDTH = .2f;
     private float DOMINO_HEIGHT  =1f;
 
-    private final float BOUNCINESS = .5f;
+    private final float BOUNCINESS = .6f;
     private final float GRAVITY = 3f;
 
     public void create() {
@@ -172,6 +172,14 @@ public class Main extends ApplicationAdapter {
 
     private void addAllDominos() {
         //add your code here!!
+        float startX = 2f; // X position of the first domino
+        float startY = 3f; // Y position for the row of dominos
+        int dominoCount = 10; // Number of dominos in the row
+    
+        // Add dominos in a line with larger gaps between them
+        for (int i = 0; i < dominoCount; i++) {
+            addDomino(startX + i * (DOMINO_WIDTH + 0.3f), startY); // Increased gap to 0.3f
+        }
     }
 
     // note - creates from center
